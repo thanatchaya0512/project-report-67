@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Taskplan-HU AcademiaLens</title>
+    <!-- HTML5 Shim and Respond.js IE11 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 11]>
+    	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    	<![endif]-->
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="">
+    <meta name="author" content="Phoenixcoded" />
+    <!-- Favicon icon -->
+    <link rel="icon" href="assets/images/hatyai-u.png" type="image/x-icon">
+
+    <!-- vendor css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    
+
+</head>
+
+<body class="">
+
+	<!-- [ Pre-loader ] start -->
+	<div class="loader-bg">
+		<div class="loader-track">
+			<div class="loader-fill"></div>
+		</div>
+	</div>
+	<!-- [ Pre-loader ] End -->
+	<!-- [ navigation menu ] start -->
+	<nav class="pcoded-navbar  ">
+		<div class="navbar-wrapper  ">
+			<div class="navbar-content scroll-div " >
+				
+				<div class="">
+					<div class="main-menu-header">
+						<i class="feather icon-user img-radius" style="font-size: 2rem; color: #ffffff;"></i>
+						<div class="user-details">
+							<!-- ทำsession -->
+							 
+								 <!-- แสดงชื่อผู้ใช้ที่รับมาจากการ Login -->
+
+							<div id="more-details"><span id="welcomeMessage"></span></div>
+							
+
+							<script>
+							
+
+								// Check if user is logged in
+								const username = localStorage.getItem("username"); // ดึงข้อมูลจาก sessionStorage
+								if (username) {
+									// Display welcome message
+									document.getElementById("welcomeMessage").textContent = `Welcome, ${username}!`; // แสดงชื่อผู้ใช้
+								} else {
+									// Redirect to login page if not logged in
+									window.location.href = "auth-signin.html"; // หากไม่มี Session จะกลับไปหน้า Login 
+								}
+						
+								//ล็อคอินครั้งเดียวกดได้ทุกหน้าแบบไม่ต้องใส่รหัสอีก 
+
+								function checkLogin() {
+    const username = localStorage.getItem("username");
+
+    if (!username) {
+      window.location.href = "auth-signin.html";
+    }
+  }
+
+  // Call checkLogin on page load
+  window.onload = checkLogin;
+  
+  
+								// Logout function
+								function logout() {
+									localStorage.removeItem("username"); // ลบข้อมูล Session เมื่อ Logout
+									
+									window.location.href = "auth-signin.html"; // กลับไปหน้า Login
+								}
+							
+							</script>
+
+
+						</div>
+					</div>
+					
+
+
+				</div>
+				
+              <!--แถบข้าง-->  
+
+
+				<ul class="nav pcoded-inner-navbar ">
+					<li class="nav-item pcoded-menu-caption">
+						<label>Report</label>
+				<li class="nav-item pcoded-hasmenu">
+					<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file"></i></span><span class="pcoded-mtext">รายงาน eProject</span></a>
+					<ul class="pcoded-submenu">
+						<li><a href="taskplan.html">โครงการทั้งหมด</a></li>
+						
+					</ul>
+				</li>
+				
+				<li class="nav-item pcoded-hasmenu">
+					<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file"></i></span><span class="pcoded-mtext">รายงาน HR</span></a>
+					<ul class="pcoded-submenu"></ul>
+					<!--เว้นไว้ใส่ครั้งหน้า-->
+				</li>
+
+				<li class="nav-item pcoded-hasmenu">
+					<a href="#!" class="nav-link "><span class="pcoded-micon"><i class="feather icon-file"></i></span><span class="pcoded-mtext">รายงานสื่อสารองค์กร</span></a>
+					<ul class="pcoded-submenu">
+				
+			</ul>
+				
+				<li class="nav-item pcoded-menu-caption">
+					<label>System</label>
+				</li>
+				<li class="nav-item ">
+					<a href="auth-signin.html" class="nav-link " onclick="logout()"><span class="pcoded-micon"><i class="feather icon-lock"></i></span><span class="pcoded-mtext">Logout</span></a>
+					
+
+				</li>
+
+
+			</ul>
+				
+				
+				
+			</div>
+		</div>
+	</nav>
+	<!-- [ navigation menu ] end -->
+	<!-- [ Header ] start -->
+	<header class="navbar pcoded-header navbar-expand-lg navbar-light header-dark">
+		
+			
+				<div class="m-header">
+					<a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
+					<a href="#!" class="b-brand">
+						<!-- ========   change your logo hear   ============ -->
+						<img src="assets/images/HU52.png" alt="" class="logo" width="150" height="auto">
+						<img src="assets/images/" alt="" class="logo-thumb">
+					</a>
+					<a href="#!" class="mob-toggler">
+						<i class="feather icon-more-vertical"></i>
+					</a>
+				</div>
+				
+	</header>
+	<!-- [ Header ] end -->
+	
+	
+
+<!-- [ Main Content ] start -->
+<div class="pcoded-main-container">
+    <div class="pcoded-content">
+        <!-- [ breadcrumb  ส่วนบนตัวเล็กๆๆ] start -->
+        <div class="page-header">
+            <div class="page-block">
+                <div class="row align-items-center">
+                    <div class="col-md-12">
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">รายงาน eProject</h5>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#!"><i class="feather icon-file"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#!">รายงาน eProject </a></li>
+                            <li class="breadcrumb-item"><a href="#!">โครงการทั้งหมด </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- [ breadcrumb ] end -->
+        <!-- [ Main Content ] start -->
+
+
+		
+        <div class="row">
+            <!-- [ variant-chart ] start -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Dashboard  Analytics</h5>
+                    </div>
+
+					<iframe width="1200" height="850" src="https://lookerstudio.google.com/embed/reporting/adbb701c-0734-4e56-a0ef-79e2238a33ed/page/FBiTE" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+                </div>
+            </div>
+        </div>
+
+
+		<div class="row">
+            <!-- [ variant-chart ] start -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Taskplan Analytics</h5>
+                    </div>
+					<iframe width="1200" height="850" src="https://lookerstudio.google.com/embed/reporting/adbb701c-0734-4e56-a0ef-79e2238a33ed/page/p_dqrf5u14md" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+
+                </div>
+            </div>
+        </div>
+
+
+		<div class="row">
+            <!-- [ variant-chart ] start -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Budget Analytics</h5>
+                    </div>
+
+					<iframe width="1200" height="850"src="https://lookerstudio.google.com/embed/reporting/adbb701c-0734-4e56-a0ef-79e2238a33ed/page/p_0bc1bh24md" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+
+
+
+    <!-- Required Js -->
+    <script src="assets/js/vendor-all.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.min.js"></script>
+    <script src="assets/js/pcoded.min.js"></script>
+
+<!-- Apex Chart -->
+<script src="assets/js/plugins/apexcharts.min.js"></script>
+
+
+<!-- custom-chart js -->
+<script src="assets/js/pages/dashboard-main.js"></script>
+</body>
+
+</html>
+
